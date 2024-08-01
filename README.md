@@ -30,6 +30,21 @@ SteinbauerIT:
     # Class execution coming soon
 ```
 
+## Usage
+
+#### Please follow the "Sign in with Microsoft: Branding guidelines for applications": https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps
+
+```neosafx
+afx`
+    <Neos.Fusion:Link.Action href.package="SteinbauerIT.MicrosoftEntraIdAuthentication" href.controller="Authentication" href.action="login">Login with MS Entry ID</Neos.Fusion:Link.Action>
+`
+```
+
+```html
+  <a href="/mseid/login">Login with MS Entry ID</a>
+```
+
+
 ## Author
 
 * E-Mail: patric.eckhart@steinbauer-it.com
