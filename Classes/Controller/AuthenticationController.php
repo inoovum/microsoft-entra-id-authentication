@@ -95,9 +95,7 @@ final class AuthenticationController extends ActionController
      */
     private function getRedirectUri(): string
     {
-        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-        $domainName = $_SERVER['HTTP_HOST'];
-        return $protocol . $domainName . '/mseid/auth';
+        return 'https://' . $_SERVER['HTTP_HOST'] . '/mseid/auth';
     }
 
 }
