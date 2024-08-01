@@ -1,0 +1,12 @@
+-
+  name: 'Test login'
+  uriPattern: 'mseid/login'
+  defaults:
+    '@controller': 'Authentication'
+    '@action': 'login'
+-
+  name: 'Authenticate'
+  uriPattern: 'mseid/auth'
+  defaults:
+    '@controller': 'Authentication'
+    '@action': 'authenticate'

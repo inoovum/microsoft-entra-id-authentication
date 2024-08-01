@@ -1,0 +1,19 @@
+{
+    "description": "Neos Flow package for Microsoft Entra ID authentication",
+    "type": "neos-package",
+    "name": "steinbauerit/microsoftentraidauthentication",
+    "require": {
+        "neos/flow": "^8.0 || ^8.1 || ^8.2 || ^8.3",
+        "steinbauerit/azure-auth-php-client": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SteinbauerIT\\MicrosoftEntraIdAuthentication\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "SteinbauerIT.MicrosoftEntraIdAuthentication"
+        }
+    }
+}

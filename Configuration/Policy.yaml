@@ -1,0 +1,10 @@
+privilegeTargets:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    'SteinbauerIT.MicrosoftEntraIdAuthentication:AuthenticationControllerActions':
+      matcher: 'method(SteinbauerIT\MicrosoftEntraIdAuthentication\Controller\AuthenticationController->.*Action())'
+
+roles:
+  'Neos.Flow:Everybody':
+    privileges:
+      - privilegeTarget: 'SteinbauerIT.MicrosoftEntraIdAuthentication:AuthenticationControllerActions'
+        permission: GRANT

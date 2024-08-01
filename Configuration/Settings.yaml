@@ -1,0 +1,20 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'SteinbauerIT.MicrosoftEntraIdAuthentication': true
+
+#SteinbauerIT:
+#  MicrosoftEntraIdAuthentication:
+#    options:
+#      clientId: ed491d0d-98de-40cd-b0d4-76c4cc96e680
+#      clientSecret: 1fk50~k~kJgjUrLnM.Ax3sNfQ6cOzNVkklPWecqP
+#      tenantId: 0304d5a7-ab72-4656-bc7b-5f98b4c78ccc
+#    account:
+#      accountIdentifierProperty: userPrincipalName
+#      authenticationProviderName: Acme.Package:Login
+#      allowedRoles:
+#        - Acme.Package:User
+#        - Acme.Package:Admin
+#    onAuthenticationSuccess:
+#      redirectToUri: /dashboard

@@ -1,0 +1,10 @@
+-
+  name: 'SubRoutes'
+  uriPattern: '<SubRoutes>'
+  defaults:
+    '@package': 'SteinbauerIT.MicrosoftEntraIdAuthentication'
+    '@format': 'html'
+  subRoutes:
+    'SubRoutes':
+      package: 'SteinbauerIT.MicrosoftEntraIdAuthentication'
+      suffix:  'Main'
