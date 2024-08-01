@@ -83,7 +83,7 @@ final class AuthenticationController extends ActionController
                 if($this->authenticationService->authenticate($me)) {
                     $this->redirectToUri($this->redirectToUri);
                 }
-                $this->view->assign('value', ['response' => 'success', 'account' => $this->securityContext->getAccount()->getAccountIdentifier()]);
+                $this->view->assign('value', ['response' => 'error']);
             } catch (ApiException $ex) {
                 throw new Exception($ex->getMessage(), $ex->getCode());
             }
