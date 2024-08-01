@@ -64,7 +64,7 @@ class AuthenticationService
 
         $account = $this->accountRepository->findByAccountIdentifierAndAuthenticationProviderName($accountIdentifier, $this->authenticationProviderName);
 
-        if($this->rolesAreAllowed($account)) {
+        if($account !== null && $this->rolesAreAllowed($account)) {
 
             $account->authenticationAttempted(TokenInterface::AUTHENTICATION_SUCCESSFUL);
 
@@ -83,7 +83,7 @@ class AuthenticationService
 
         }
 
-        $this->logger->debug(sprintf('Microsoft Entra ID Authentication: The roles of account %s are not in the allowedRoles in the Configuration.', $account->getAccountIdentifier()), LogEnvironment::fromMethodName(__METHOD__));
+        $this->logger->debug(sprintf('Microsoft Entra ID Authentication: The roles of account %s are not in the allowedRoles in the Configuration or the account does not exist.', $account->getAccountIdentifier()), LogEnvironment::fromMethodName(__METHOD__));
         return false;
     }
 
