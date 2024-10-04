@@ -46,12 +46,12 @@ final class AuthenticationController extends ActionController
     protected Context $securityContext;
 
     /**
-     *
+     * @param string $base64EncodedCallbackUri
      * @return void
      */
-    public function loginAction(): void
+    public function loginAction(string $base64EncodedCallbackUri = ''): void
     {
-        $uri = 'https://login.microsoftonline.com/' . $this->tenantId . '/oauth2/v2.0/authorize?client_id=' . $this->clientId . '&response_type=code&redirect_uri=' . $this->getRedirectUri() . '&response_mode=query&scope=User.Read&state=12345';
+        $uri = 'https://login.microsoftonline.com/' . $this->tenantId . '/oauth2/v2.0/authorize?client_id=' . $this->clientId . '&response_type=code&redirect_uri=' . $this->getRedirectUri() . '&response_mode=query&scope=User.Read&state=' . ($base64EncodedCallbackUri !== '' ? $base64EncodedCallbackUri : '0');
         $this->redirectToUri($uri);
     }
 
@@ -81,7 +81,11 @@ final class AuthenticationController extends ActionController
                 $me = $client->me()->get()->wait();
 
                 if($this->authenticationService->authenticate($me)) {
-                    $this->redirectToUri($this->redirectToUri);
+                    if($this->request->hasArgument('state') && $this->request->getArgument('state') !== '0') {
+                        $this->redirectToUri(base64_decode($this->request->getArgument('state')));
+                    } else {
+                        $this->redirectToUri($this->redirectToUri);
+                    }
                 }
                 $this->view->assign('value', ['response' => 'error']);
             } catch (ApiException $ex) {

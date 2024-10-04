@@ -44,6 +44,14 @@ afx`
   <a href="/mseid/login">Login with MS Entry ID</a>
 ```
 
+### Optional: With base64 encoded callback uri
+
+This callback uri is used for the redirect.
+
+```html
+  <a href="/mseid/login/aHR0cHM6Ly93d3cuZm9vYmFyLmNvbS9ncmFudD90b2tlbj1mMWcyZDRmZzFqa2w0NTY0NWtsNjkweGM5ODBjeHY=">Login with MS Entry ID</a>
+```
+
 
 ## Author
 

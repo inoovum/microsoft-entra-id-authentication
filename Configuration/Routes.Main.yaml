@@ -1,9 +1,10 @@
 -
   name: 'Login'
-  uriPattern: 'mseid/login'
+  uriPattern: 'mseid/login(/{base64EncodedCallbackUri})'
   defaults:
     '@controller': 'Authentication'
     '@action': 'login'
+    'base64EncodedCallbackUri': ''
 -
   name: 'Authenticate'
   uriPattern: 'mseid/auth'
